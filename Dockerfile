@@ -1,7 +1,7 @@
-FROM golang:alpine as gobuild
+FROM arm32v6/golang:alpine as gobuild
 
-ARG GOARCH
-ARG GOARM
+ENV GOARCH=arm
+ENV GOARM=6
 
 RUN apk update; \
     apk add git gcc build-base; \
